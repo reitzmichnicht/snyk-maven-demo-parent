@@ -110,7 +110,6 @@
     <version.kotlinx.coroutines>1.4.3</version.kotlinx.coroutines>
     <version.logback>1.2.3</version.logback>
     <version.mapstruct>1.4.2.Final</version.mapstruct>
-    <version.mgmp-model>3.0.0</version.mgmp-model>
     <version.mockito>3.9.0</version.mockito>
     <version.moxy>2.7.8</version.moxy>
     <version.picocli>4.6.1</version.picocli>
@@ -138,24 +137,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- internal dependencies -->
-      <dependency>
-        <groupId>com.bbraun.cit</groupId>
-        <artifactId>cit-ut-depchain</artifactId>
-        <version>1.13.0-SNAPSHOT</version>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>com.bbraun.cit</groupId>
-        <artifactId>cit-it-depchain</artifactId>
-        <version>1.13.0-SNAPSHOT</version>
-        <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>com.bbraun.ais</groupId>
-        <artifactId>mgmp-model</artifactId>
-        <version>${version.mgmp-model}</version>
-      </dependency>
 
       <!-- BOM dependencies -->
       <dependency>
@@ -210,13 +191,6 @@
         <groupId>org.jetbrains.kotlin</groupId>
         <artifactId>kotlin-bom</artifactId>
         <version>${version.kotlin}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency><!-- Custom BOM -->
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-bom</artifactId>
-        <version>${version.slf4j}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -761,42 +735,11 @@
       </dependency>
 
       <!-- test dependencies -->
-      <dependency>
-        <groupId>com.bbraun.testing</groupId>
-        <artifactId>easy-guards</artifactId>
-        <version>${version.easy-testing}</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.bbraun.testing</groupId>
-        <artifactId>easy-mapper</artifactId>
-        <version>${version.easy-testing}</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.bbraun.testing</groupId>
-        <artifactId>easy-matcher</artifactId>
-        <version>${version.easy-testing}</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.bbraun.testing</groupId>
-        <artifactId>easy-random</artifactId>
-        <version>${version.easy-testing}</version>
-        <scope>test</scope>
-        <exclusions>
-          <exclusion>
-            <artifactId>snakeyaml</artifactId>
-            <groupId>org.yaml</groupId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-
-      <dependency>
-        <groupId>org.jeasy</groupId>
-        <artifactId>easy-random-core</artifactId>
-        <version>${version.easybeans}</version>
-      </dependency>
+       <dependency>
+         <groupId>org.jeasy</groupId>
+         <artifactId>easy-random-core</artifactId>
+         <version>${version.easybeans}</version>
+       </dependency>
       <dependency>
         <groupId>org.jeasy</groupId>
         <artifactId>easy-random-randomizers</artifactId>
